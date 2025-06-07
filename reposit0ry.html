@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rashid Imam | Web Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" =\%="stylesheet">
+  <style type="text/css" media="all">
+    :root {
+      --bg: #111;
+      --text: #eee;
+      --primary: #00ffcc;
+      --light-bg: #fff;
+      --light-text: #111;
+      --light-primary: #007acc;
+      --light-secondary: #f0f0f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body.light-mode {
+      --bg: var(--light-bg);
+      --text: var(--light-text);
+      --primary: var(--light-primary);
+    }
+
+    .heading-style {
+      color: var(--primary);
+      margin: 0;
+      position: relative;
+      font-size: 2.5em;
+      z-index: 2;
+      line-height: 1.2em;
+    }
+
+    header {
+      background: linear-gradient(45deg, var(--primary), transparent);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+   .logo {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  animation: fly 8s linear infinite;
+}
+
+/* Logos with background images */
+.logo.html {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/732/732212.png');
+  top: 10%;
+  left: -50px;
+  animation-delay: 0s;
+}
+
+.logo.css {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/732/732190.png');
+  top: 30%;
+  left: -80px;
+  animation-delay: 2s;
+}
+
+.logo.js {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/5968/5968292.png');
+  top: 50%;
+  left: -60px;
+  animation-delay: 4s;
+}
+
+.logo.python {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/5968/5968350.png');
+  top: 70%;
+  left: -90px;
+  animation-delay: 6s;
+}
+
+    .bird {
+      width: 40px;
+      height: 40px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/3/32/Bird_icon.svg') no-repeat center;
+      background-size: contain;
+      position: absolute;
+      animation: fly 8s linear infinite;
+    }
+
+    .bird:nth-of-type(1) { top: 10%; left: -50px; animation-delay: 0s; }
+    .bird:nth-of-type(2) { top: 30%; left: -80px; animation-delay: 3s; }
+    .bird:nth-of-type(3) { top: 50%; left: -60px; animation-delay: 5s; }
+
+    @keyframes fly {
+      0% { transform: translateX(0) rotate(0deg); }
+      100% { transform: translateX(110vw) rotate(360deg); }
+    }
+
+    .toggle-switch {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 999;
+    }
+
+    .toggle-switch input[type="checkbox"] {
+      display: none;
+    }
+
+    .toggle-slider {
+      width: 50px;
+      height: 25px;
+      background: #555;
+      border-radius: 25px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .toggle-slider::before {
+      content: '';
+      width: 21px;
+      height: 21px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s ease;
+    }
+
+    input[type="checkbox"]:checked + .toggle-slider {
+      background: var(--primary);
+    }
+
+    input[type="checkbox"]:checked + .toggle-slider::before {
+      transform: translateX(25px);
+    }
+
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.8em;
+    }
+
+    .contact {
+      background: #1f1f1f;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    body.light-mode .contact {
+      background: var(--light-secondary);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1f1f1f;
+      margin-top: 40px;
+    }
+
+    body.light-mode footer {
+      background: var(--light-secondary);
+    }
+
+    .cta {
+      text-align: center;
+      background: #222;
+      padding: 30px 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 700px;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      color: var(--text);
+    }
+
+    body.light-mode .cta {
+      background: var(--light-secondary);
+      color: var(--light-text);
+    }
+
+    .cta strong {
+      color: var(--primary);
+    }
+
+    .highlight {
+      color: var(--text);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .heading-style {
+        font-size: 1.6em;
+      }
+
+      .toggle-switch {
+        top: 5px;
+      }
+
+      input[type="checkbox"]:checked + .toggle-slider::before {
+        transform: translateX(15px);
+      }
+
+      .toggle-slider {
+        width: 30px;
+        height: 15px;
+      }
+
+      .toggle-slider::before {
+        width: 12px;
+        height: 12px;
+      }
+
+      .cta {
+        font-size: 1em;
+        padding: 20px 10px;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+      
+      
+      .logo {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.logo.html { top: 5% !important; left: -40px !important; animation-delay: 0s !important; }
+.logo.css  { top: 20% !important; left: -50px !important; animation-delay: 1.5s !important; }
+.logo.js   { top: 35% !important; left: -45px !important; animation-delay: 3s !important; }
+.logo.python { top: 50% !important; left: -55px !important; animation-delay: 4.5s !important; }
+
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toggle-switch">
+    <label>
+      <input type="checkbox" id="modeToggle" />
+      <div class="toggle-slider"></div>
+    </label>
+  </div>
+
+  <header>
+  <h1 class="heading-style">An Experienced & Smart Working Web Developer – Rashid Imam</h1>
+  <div class="bird logo html"></div>
+  <div class="logo css"></div>
+  <div class="logo js"></div>
+  <div class="logo python"></div>
+</header>
+
+  <section class="cta">
+    <p>🚀 <strong>Want a website that stands out?</strong></p>
+    <p class="highlight">Whether you need a personal portfolio, business site, or a creative landing page — I build modern, fast, and mobile-friendly websites that turn visitors into customers. Let’s bring your idea to life today!</p>
+    <p><strong>I take website development projects directly from clients and deliver high-quality results on time. This is not just my passion — it's my profession. You share the idea, I build the site, and you get an amazing online presence — while I earn through successful project completion!</strong></p>
+  </section>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Hello! I’m Rashid, a passionate and experienced web developer who believes in smart work and consistency.
+      I love turning ideas into reality using HTML, CSS, JavaScript, and Python. I constantly learn new things
+      and aim to deliver clean, functional, and user-friendly web solutions.
+    </p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Frontend: HTML, CSS, JavaScript</li>
+      <li>Backend: Python (Basics)</li>
+      <li>Git & GitHub (Basic knowledge)</li>
+      <li>Responsive Web Design</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>Email: <a href="mailto:rashidimam087@gmail.com">rashidimam087@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/rashidimam01" target="_blank">github.com/rashidimam01</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Rashid Imam</p>
+  </footer>
+
+  <script  type="text/javascript" charset="utf-8">
+    const toggleCheckbox = document.getElementById('modeToggle');
+toggleCheckbox.addEventListener('change', () => {
+  document.body.classList.toggle('light-mode');
+});
+  </script>
+
+</body>
+</html>
